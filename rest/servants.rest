@@ -1,0 +1,35 @@
+### Get all pokemons
+GET http://localhost:3000/pokemons
+
+### Get all servants
+GET http://localhost:3000/servants
+
+### Create Jalter
+POST http://localhost:3000/servants
+
+{
+    "name": "Jeanne-Alter",
+    "class": "Avenger",
+    "alignment": "Chaotic"
+}
+
+### Create Mash
+POST http://localhost:3000/servants
+
+{
+    "name": "Mash Kyrielight",
+    "class": "Shielder",
+    "alignment": "Lawful"
+}
+
+### Create Okita
+POST http://localhost:3000/servants
+
+{
+    "name": "Okita Souji",
+    "class": "Saber",
+    "alignment": "Neutral"
+}
+
+### Delete Jeanne-Alter
+DELETE http://localhost:3000/servants?name=Jeanne-Alter

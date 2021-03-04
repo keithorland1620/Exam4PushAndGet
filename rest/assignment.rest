@@ -1,0 +1,53 @@
+/// Weekly Exam Assertions
+
+### Get Jeanne-Alter only
+GET http://localhost:3000/servants?name=Jeanne-Alter
+
+
+### Update - Should update Jeanne-Alter
+PUT http://localhost:3000/servants?name=Jeanne-Alter
+Content-Type: application/json
+{
+	"class": "Ruler",
+	"alignment": "Lawful"
+}
+
+### Create BB
+POST http://localhost:3000/servants
+Content-Type: application/json
+
+{ 
+	"name": "BB", 
+	"class": "Moon Cancer", 
+	"alignment": "Chaotic" 
+}
+
+### Update - Update success, alignment property is optional
+PUT http://localhost:3000/servants?name=BB
+Content-Type: application/json
+
+{
+	"class": "Caster"
+}
+
+### Update - Update fail, class property is missing
+PUT http://localhost:3000/servants?name=BB
+Content-Type: application/json
+
+{
+	"alignment": "Neutral"
+}
+
+### Update - Update will fail, class property is blank
+PUT http://localhost:3000/servants?name=BB
+Content-Type: application/json
+
+{
+	"class": "",
+	"alignment": "Chaotic"
+}
+
+### Update - Update will fail, Heracles is missing
+PUT http://localhost:3000/servants?name=Heracles
+
+
